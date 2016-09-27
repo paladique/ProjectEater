@@ -1,9 +1,9 @@
 <#
 	My Function
 #>
-function Find-Projects {
+function RemoveOldProjects {
 
-	RemoveOldProjects
+	RemoveVSProjectss
 
 		
 }
