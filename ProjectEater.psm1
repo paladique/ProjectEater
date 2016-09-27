@@ -3,7 +3,7 @@
 #>
 function Find-Projects {
 
-GatherPrjects
+	RemoveOldProjects
 
 		
 }

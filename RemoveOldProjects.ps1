@@ -2,7 +2,14 @@
 # GatherProjects.ps1
 #
 
-$items = Get-ChildItem -Path "C:\users\Jasmine Greenaway\Documents\Visual Studio 2015\Projects"
+[CmdletBinding()]
+Param(
+	[Parameter(Mandatory=$False,Position=1)]
+	[string]$path
+   )
+
+
+$items = Get-ChildItem -Path $path
 
 [System.Collections.ArrayList]$OldProjects = New-Object System.Collections.ArrayList
 
@@ -22,7 +29,6 @@ foreach ($item in $items)
 }
 
 "These are over 14 days old, which would you like to delete?"
-"Separate mutliple projects with commas"
 
 
 foreach ($item in $OldProjects)
@@ -30,9 +36,15 @@ foreach ($item in $OldProjects)
 	Write-Host  $OldProjects.IndexOf($item):  $item.Name  
 }
 
+"Press any key to continue, separate mutliple projects with commas."
+$x = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+
 $toDelete = Read-Host
 
-foreach ($item in $toDelete.Split(","))
+if($toDelete.Length -gt 0)
 {
-  $item
+	foreach ($item in $toDelete.Split(","))
+	{
+	   Remove-Item $OldProjects.Item($item) -Recurse -Force 
+	}
 }
