@@ -1,20 +1,7 @@
-<#
-	My Function
-#>
-function RemoveOldProjects {
+#
+# RemoveVSProjects.ps1
+#
 
-	[CmdletBinding()]
-	Param(
-	[Parameter(Mandatory=$False,Position=1)]
-	[string]$path
-	)
-
-	RemoveVSProjects $path
-
-		
-}
-
-function RemoveVSProjects {
 	[CmdletBinding()]
 	Param(
 		[Parameter(Mandatory=$False,Position=1)]
@@ -65,5 +52,3 @@ function RemoveVSProjects {
 		   Remove-Item (Join-Path $path $OldProjects.Item($item)) -Recurse -Force
 		}
 	}
-}
-

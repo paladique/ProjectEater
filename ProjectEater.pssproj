@@ -32,6 +32,7 @@
     <Compile Include="ProjectEater.psd1" />
     <Compile Include="ProjectEater.psm1" />
     <Compile Include="ProjectEater.tests.ps1" />
+    <Compile Include="RemoveVSProjects.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />
