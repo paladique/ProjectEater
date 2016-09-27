@@ -22,9 +22,17 @@ foreach ($item in $items)
 }
 
 "These are over 14 days old, which would you like to delete?"
+"Separate mutliple projects with commas"
+
 
 foreach ($item in $OldProjects)
 {
-   $item.Name
+	Write-Host  $OldProjects.IndexOf($item):  $item.Name  
 }
 
+$toDelete = Read-Host
+
+foreach ($item in $toDelete.Split(","))
+{
+  $item
+}

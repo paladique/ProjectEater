@@ -7,7 +7,8 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>MyApplication</RootNamespace>
     <AssemblyName>MyApplication</AssemblyName>
-    <Name>ProjectRoomba</Name>
+    <Name>ProjectEater</Name>
+    <ProjectHome />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,9 +29,9 @@
   </PropertyGroup>
   <ItemGroup />
   <ItemGroup>
-    <Compile Include="ProjectRoomba.psd1" />
-    <Compile Include="ProjectRoomba.psm1" />
-    <Compile Include="ProjectRoomba.tests.ps1" />
+    <Compile Include="ProjectEater.psd1" />
+    <Compile Include="ProjectEater.psm1" />
+    <Compile Include="ProjectEater.tests.ps1" />
     <Compile Include="GatherProjects.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
