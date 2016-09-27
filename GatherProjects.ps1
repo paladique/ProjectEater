@@ -1,25 +1,30 @@
 #
-# Script1.ps1
+# GatherProjects.ps1
 #
 
 $items = Get-ChildItem -Path "C:\users\Jasmine Greenaway\Documents\Visual Studio 2015\Projects"
 
-[System.Collections.ArrayList]$OldProjects 
+[System.Collections.ArrayList]$OldProjects = New-Object System.Collections.ArrayList
+
 
 foreach ($item in $items)
 {
       if ($item.Attributes -eq "Directory")
       {
-            Write-Host $item.Name
-			Write-Host $item.LastAccessTime
 			$end = Get-Date
 			$span = NEW-TIMESPAN –Start $item.LastAccessTime –End $end
 
-			$span.Days
-
-			if($span.Days -ge 14 )
+			if($span.Days -ge 14 -and $item.GetFiles("*.sln").count -gt 0)
 			{
-			   "this shit's old"	
+				[void]$OldProjects.add($item)	
 			}
       }
 }
+
+"These are over 14 days old, which would you like to delete?"
+
+foreach ($item in $OldProjects)
+{
+   $item.Name
+}
+
