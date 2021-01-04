@@ -1,3 +1,5 @@
 # Project Eater
-Get rid of all those useless ConsoleApplication1 Projects.
-Was going to call it "Project Roomba" but definitely do not want to get sued. 
+
+Script that removes Visual Studio solution files that have been unmodified for 14 days or longer.
+
+⚠ This is really old and most likely needs some TLC and fixes.
